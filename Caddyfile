@@ -1,0 +1,3 @@
+reinicia-y-reza.duckdns.org {
+    reverse_proxy mm:8065
+}

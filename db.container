@@ -1,0 +1,17 @@
+[Unit]
+Description=PostgreSQL de Mattermost
+
+[Container]
+Image=docker.io/library/postgres:16
+ContainerName=db
+Network=mmnet.network
+Volume=%h/mm/pgdata:/var/lib/postgresql/data:Z,U
+Environment=POSTGRES_USER=mmuser
+Environment=POSTGRES_PASSWORD=CAMBIAR
+Environment=POSTGRES_DB=mattermost
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
